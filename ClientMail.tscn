@@ -29,29 +29,29 @@ margin_left = 204.0
 margin_right = 1028.0
 margin_bottom = 604.0
 
-[node name="listeEntetes" type="ScrollContainer" parent="Interface/clientMail/mails"]
+[node name="ListeMails" type="ScrollContainer" parent="Interface/clientMail/mails"]
 margin_right = 824.0
-margin_bottom = 250.0
+margin_bottom = 600.0
 rect_min_size = Vector2( 824, 250 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Interface/clientMail/mails/listeEntetes"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/clientMail/mails/ListeMails"]
 margin_right = 824.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 824, 0 )
 
-[node name="ExpediteurMail" type="Label" parent="Interface/clientMail/mails/listeEntetes/HBoxContainer"]
+[node name="ExpediteurMail" type="Label" parent="Interface/clientMail/mails/ListeMails/HBoxContainer"]
 margin_right = 131.0
 margin_bottom = 14.0
 text = "client@yopmail.com"
 
-[node name="ObjetMail" type="Label" parent="Interface/clientMail/mails/listeEntetes/HBoxContainer"]
+[node name="ObjetMail" type="Label" parent="Interface/clientMail/mails/ListeMails/HBoxContainer"]
 margin_left = 135.0
 margin_right = 223.0
 margin_bottom = 14.0
 text = "SUPER PROJET"
 
-[node name="contenuMail" type="HBoxContainer" parent="Interface/clientMail/mails"]
-margin_top = 254.0
-margin_right = 824.0
-margin_bottom = 604.0
-rect_min_size = Vector2( 824, 350 )
+[node name="DateMail" type="Label" parent="Interface/clientMail/mails/ListeMails/HBoxContainer"]
+margin_left = 227.0
+margin_right = 361.0
+margin_bottom = 14.0
+text = "04/12/2021 13:37:00"
