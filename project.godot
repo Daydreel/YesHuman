@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="!Yesman"
+run/main_scene="res://ClientMail.tscn"
 config/icon="res://icon.png"
 
 [physics]

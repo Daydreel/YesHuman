@@ -1,0 +1,57 @@
+[gd_scene format=2]
+
+[node name="ClientMail" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.978192, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Interface" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clientMail" type="HBoxContainer" parent="Interface"]
+margin_right = 1028.0
+margin_bottom = 604.0
+
+[node name="choixBoite" type="VBoxContainer" parent="Interface/clientMail"]
+margin_right = 200.0
+margin_bottom = 604.0
+rect_min_size = Vector2( 200, 600 )
+
+[node name="mails" type="VBoxContainer" parent="Interface/clientMail"]
+margin_left = 204.0
+margin_right = 1028.0
+margin_bottom = 604.0
+
+[node name="listeEntetes" type="ScrollContainer" parent="Interface/clientMail/mails"]
+margin_right = 824.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 824, 250 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/clientMail/mails/listeEntetes"]
+margin_right = 824.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 824, 0 )
+
+[node name="ExpediteurMail" type="Label" parent="Interface/clientMail/mails/listeEntetes/HBoxContainer"]
+margin_right = 131.0
+margin_bottom = 14.0
+text = "client@yopmail.com"
+
+[node name="ObjetMail" type="Label" parent="Interface/clientMail/mails/listeEntetes/HBoxContainer"]
+margin_left = 135.0
+margin_right = 223.0
+margin_bottom = 14.0
+text = "SUPER PROJET"
+
+[node name="contenuMail" type="HBoxContainer" parent="Interface/clientMail/mails"]
+margin_top = 254.0
+margin_right = 824.0
+margin_bottom = 604.0
+rect_min_size = Vector2( 824, 350 )
