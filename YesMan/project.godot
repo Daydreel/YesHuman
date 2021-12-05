@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="YesMan"
-run/main_scene="res://Scenes/BoiteMail/BoiteMail.tscn"
+run/main_scene="res://Scenes/ZoneFab.tscn"
 config/icon="res://icon.png"
 
 [autoload]
