@@ -11,11 +11,19 @@ config_version=4
 [application]
 
 config/name="YesMan"
+run/main_scene="res://Scenes/BoiteMail/BoiteMail.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GS="*res://Systems/GameSystem.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/borderless=true
+window/size/fullscreen=true
 
 [physics]
 

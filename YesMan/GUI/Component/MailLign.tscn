@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/Component/MailLign.gd" type="Script" id=1]
+
+[node name="MailLign" type="Button"]
+anchor_right = 1.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 30 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 24.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FromLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_right = 33.0
+margin_bottom = 14.0
+text = "From"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 37.0
+margin_right = 476.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="SubjectLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 480.0
+margin_right = 527.0
+margin_bottom = 14.0
+text = "Subject"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 531.0
+margin_right = 970.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="DateLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 974.0
+margin_right = 1004.0
+margin_bottom = 14.0
+text = "Date"
+
+[connection signal="pressed" from="." to="." method="_on_MailLign_pressed"]
