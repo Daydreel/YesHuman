@@ -1,11 +1,17 @@
 {
-    "mails": [
-        {
-            "expediteur": "dada",
-            "contenu": "C'est l'histoire d'un gars...",
-            "date": "jeudi 16 janvier 2020",
-            "oui": "Parfait c'est noté",
-            "non": "comment ça non ?!"
-        }
-    ]
+	"mails" : [
+	{ "expediteur" : "dada",
+	"sujet" : "sujet",
+	"contenu" : "C'est l'histoire d'un gars...",
+	"date" : "jeudi 16 janvier 2020",
+	"oui" : "Parfait c'est noté",
+	"non" : "comment ça non ?!"
+	"logo" : "daaaaa.png"
+	"argent" : [10,-10]
+	"energy" : [11,-11]
+	"humeur" : [12,-12]
+	"exposition" : [13,-13]
+	"charge_mentale" : [14,-14]
+	}
+	]
 }

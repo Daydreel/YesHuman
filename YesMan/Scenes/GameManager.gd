@@ -5,10 +5,14 @@ onready var energy_text = get_node("Energy")
 #Text used to display Argent
 onready var argent_text = get_node("Argent")
 onready var animation_player = $AnimationPlayer
-onready var contenu_text = $infos
-onready var expediteur_text = $infos
-onready var date_text = $infos
-onready var oui_text = $infos
+onready var sujet_text = $MarginContainer/ElementsMail/EnteteMail/SujetMail
+onready var contenu_text = $MarginContainer/ElementsMail/TexteMail
+onready var expediteur_text = $MarginContainer/ElementsMail/Expediteur/NomExpediteur
+#onready var date_text = $infos
+onready var oui_text = $MarginContainer/ElementsMail/BoutonsReponse/YesButton
+onready var non_text = $MarginContainer/ElementsMail/BoutonsReponse/NoButton
+
+var mail
 
 export(String, FILE, "*.tscn") var scene_where_to_go
 var _current_scene
@@ -21,8 +25,8 @@ var _current_scene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_init_mail()
-	animation_player.play_backwards("TransitionOut")
-	yield(animation_player, "animation_finished")
+	#animation_player.play_backwards("TransitionOut")
+	#yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
 	_current_scene = get_tree().get_current_scene().filename
 	energy_text.text = str(GS.energy)
@@ -43,6 +47,11 @@ func _init_mail():
 	file.close()
 	
 	var mails = JSON.parse(text).result
-	var mail = mails["mails"]
+	mail = mails["mails"]
+	sujet_text = str(mail[0]["sujet"])
+	expediteur_text.text = str(mail[0]["expediteur"])
 	contenu_text.text = str(mail[0]["contenu"])
+#	date_text.text = str(mail[0]["date"])
+	oui_text.text = str(mail[0]["oui"])
+	non_text.text = str(mail[0]["non"])
 	pass
