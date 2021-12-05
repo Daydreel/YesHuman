@@ -17,7 +17,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="ZoneFab" type="Node2D"]
+[node name="ZoneFab2" type="Node2D"]
 script = ExtResource( 1 )
 scene_where_to_go = "res://Scenes/ZoneFab.tscn"
 
@@ -58,10 +58,10 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -17.0
-margin_top = -16.0
-margin_right = 1055.0
-margin_bottom = 625.0
+margin_left = -22.0
+margin_top = -27.0
+margin_right = 1955.0
+margin_bottom = 1100.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -70,5 +70,14 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/TransitionOut = SubResource( 1 )
+
+[node name="infos" type="RichTextLabel" parent="."]
+margin_left = 432.0
+margin_top = 230.0
+margin_right = 1417.0
+margin_bottom = 751.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

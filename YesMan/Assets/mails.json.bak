@@ -1,0 +1,10 @@
+{
+	"mails" : [
+	{ "expediteur" : "dada",
+	"mail" : "C'est l'histoire d'un gars...",
+	"date" : "jeudi 16 janvier 2020",
+	"oui" : "Parfait c'est noté",
+	"non" : "comment ça non ?!"
+	}
+	]
+}

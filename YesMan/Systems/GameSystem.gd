@@ -29,5 +29,4 @@ func _change_scene(scene_name, animation_player, delay = 0.1):
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
 
-
 	
