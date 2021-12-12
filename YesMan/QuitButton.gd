@@ -1,5 +1,7 @@
 extends TextureButton
 
+export(NodePath) var popup_np
 
 func _on_QuitButton_pressed():
-	get_tree().quit()
+	var popup = get_node(popup_np)
+	popup.visible = true

@@ -12,6 +12,7 @@ config_version=4
 
 config/name="YesMan"
 run/main_scene="res://Scenes/BoiteMail/BoiteMail.tscn"
+boot_splash/image="res://Assets/Graphics/Titre.png"
 config/icon="res://icon.png"
 
 [autoload]
