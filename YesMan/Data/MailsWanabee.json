@@ -1,0 +1,20 @@
+[
+  {
+    "Expediteur": "ArtSuf",
+    "ObjetMail": "L'ArtSuf vous accompagne",
+    "DateReception": "12/12/21",
+    "Contenu": "Bonjour L'ArtSuf vous accompagne dans vos démarches administratives. N'oubliez pas de payer vos charges sociales !",
+    "Logo": "",
+    "Oui": "Okay",
+    "Non": "Snif"
+  },
+  {
+    "Expediteur": "JobMePls",
+    "ObjetMail": "Vous du talent ?",
+    "DateReception": "12/12/21",
+    "Contenu": "Viens travailler avec, tkt, ça vaut le coup !",
+    "Logo": "",
+    "Oui": "Carrément !",
+    "Non": "Euh...t'es qui ?"
+  }
+]
