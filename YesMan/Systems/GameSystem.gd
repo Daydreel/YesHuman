@@ -29,4 +29,9 @@ func _change_scene(scene_name, animation_player, delay = 0.1):
 	yield(animation_player, "animation_finished")
 	emit_signal("scene_changed")
 
-	
+func load_mail_info
+
+
+#func _input(event):
+#	if event is InputEventMouseButton:
+#		print("Mouse Click/Unclick at: ", event)

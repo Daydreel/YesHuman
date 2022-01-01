@@ -3,8 +3,9 @@
 [ext_resource path="res://Assets/Font/comicsansms_Regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
+size = 30
 outline_color = Color( 0.533333, 0.831373, 0.94902, 1 )
+use_filter = true
 font_data = ExtResource( 1 )
 
 [resource]
