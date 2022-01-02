@@ -1,20 +1,22 @@
 [
   {
-    "Expediteur": "ArtSuf",
-    "ObjetMail": "L'ArtSuf vous accompagne",
-    "DateReception": "12/12/21",
-    "Contenu": "Bonjour L'ArtSuf vous accompagne dans vos démarches administratives. N'oubliez pas de payer vos charges sociales !",
+    "ID": 0,
+    "From": "ArtSuf",
+    "Object": "L'ArtSuf vous accompagne",
+    "DateReceived": "12/12/21",
+    "Content": "Bonjour L'ArtSuf vous accompagne dans vos démarches administratives. N'oubliez pas de payer vos charges sociales !",
     "Logo": "",
-    "Oui": "Okay",
-    "Non": "Snif"
+    "Yes": "Okay",
+    "No": "Snif"
   },
   {
-    "Expediteur": "JobMePls",
-    "ObjetMail": "Vous du talent ?",
-    "DateReception": "12/12/21",
-    "Contenu": "Viens travailler avec, tkt, ça vaut le coup !",
+    "ID": 1,
+    "From": "JobMePls",
+    "Object": "Vous du talent ?",
+    "DateReceived": "12/12/21",
+    "Content": "Viens travailler avec, tkt, ça vaut le coup !",
     "Logo": "",
-    "Oui": "Carrément !",
-    "Non": "Euh...t'es qui ?"
+    "Yes": "Carrément !",
+    "No": "Euh...t'es qui ?"
   }
 ]
