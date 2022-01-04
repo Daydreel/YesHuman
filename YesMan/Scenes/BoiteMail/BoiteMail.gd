@@ -49,7 +49,6 @@ func instance_mail(var id = -1):
 		printerr("No ID for mail in func : instance_mail")
 		return
 	var mail_data = load_data_single_mail_raw(id)
-	print(mail_data)
 	#set_mail_data : 
 	#from = "from", object = "object", 
 	#content = "content", yes = "yes", no = "no"

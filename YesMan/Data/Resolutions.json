@@ -1,0 +1,32 @@
+[
+  {
+    "ID": "Job1",
+    "Yes": "FirstJobDone",
+    "No": "",
+    "Ghosting": ""
+  },
+  {
+    "ID": "Job2",
+    "Yes": "SecondJobDone",
+    "No": "",
+    "Ghosting": ""
+  },
+  {
+    "ID": "Job3",
+    "Yes": "ThirdJobDone",
+    "No": "",
+    "Ghosting": ""
+  },
+  {
+    "ID": "Job4",
+    "Yes": "",
+    "No": "",
+    "Ghosting": ""
+  },
+  {
+    "ID": "Familly1",
+    "Yes": "",
+    "No": "",
+    "Ghosting": ""
+  }
+]

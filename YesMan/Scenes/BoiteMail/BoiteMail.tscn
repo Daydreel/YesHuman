@@ -20,7 +20,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-mails_data_path = "res://Data/MailsWanabee.json"
+mails_data_path = "res://Data/Mails.json"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0

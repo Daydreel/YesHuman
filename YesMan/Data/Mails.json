@@ -1,0 +1,74 @@
+[
+  {
+    "ID": 0,
+    "From": "ArtSuf",
+    "Object": "L'ArtSuf vous accompagne",
+    "DateReceived": "12/12/21",
+    "Content": "Bonjour L'ArtSuf vous accompagne dans vos démarches administratives. N'oubliez pas de payer vos charges sociales !",
+    "Logo": "",
+    "Yes": "Okay",
+    "No": "Snif",
+    "Conditions": "",
+    "Resolution": ""
+  },
+  {
+    "ID": 1,
+    "From": "JobMePls",
+    "Object": "Vous du talent ?",
+    "DateReceived": "12/12/21",
+    "Content": "Viens travailler avec, tkt, ça vaut le coup !",
+    "Logo": "",
+    "Yes": "Carrément !",
+    "No": "Euh...t'es qui ?",
+    "Conditions": "",
+    "Resolution": "Job1"
+  },
+  {
+    "ID": 2,
+    "From": "JobMePls",
+    "Object": "Vous du talent ? #2",
+    "DateReceived": "12/12/21",
+    "Content": "Viens travailler avec, tkt, ça vaut vraiment le coup !",
+    "Logo": "",
+    "Yes": "Carrément !",
+    "No": "Non, merci.",
+    "Conditions": "FirstJobDone",
+    "Resolution": "Job2"
+  },
+  {
+    "ID": 3,
+    "From": "JobMePls",
+    "Object": "Vous du talent ? #3",
+    "DateReceived": "12/12/21",
+    "Content": "Viens travailler avec, tkt, tu vas toujours kiffer",
+    "Logo": "",
+    "Yes": "Carrément !",
+    "No": "Non, merci.",
+    "Conditions": "SecondJobDone",
+    "Resolution": "Job3"
+  },
+  {
+    "ID": 4,
+    "From": "JobMePls",
+    "Object": "Vous du talent ? #4",
+    "DateReceived": "12/12/21",
+    "Content": "Okay, t'es un BG !",
+    "Logo": "",
+    "Yes": "Carrément !",
+    "No": "Non, merci.",
+    "Conditions": "ThirdJobDone",
+    "Resolution": ""
+  },
+  {
+    "ID": 5,
+    "From": "Ta mère",
+    "Object": "Oui, je t'écris !",
+    "DateReceived": "12/12/21",
+    "Content": "Tu t'es bien installé ? Tu n'es pas trop seul dans ton nouveau chez toi ?",
+    "Logo": "",
+    "Yes": "Tout va bien !",
+    "No": "O'scour moman !",
+    "Conditions": "ThirdJobDone,SecondJobDone,FirstJobDone",
+    "Resolution": "Familly1"
+  }
+]

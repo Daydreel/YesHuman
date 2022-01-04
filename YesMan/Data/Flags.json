@@ -1,0 +1,18 @@
+[
+  {
+    "Flag": "FirstJobDone",
+    "State": "FALSE"
+  },
+  {
+    "Flag": "SecondJobDone",
+    "State": "FALSE"
+  },
+  {
+    "Flag": "ThirdJobDone",
+    "State": "FALSE"
+  },
+  {
+    "Flag": "FamillyFirst",
+    "State": "FALSE"
+  }
+]
