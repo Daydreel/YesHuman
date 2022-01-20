@@ -63,7 +63,7 @@ margin_right = 1500.0
 margin_bottom = 770.0
 custom_constants/margin_top = 20
 
-[node name="TextureRect" type="TextureButton" parent="Panel"]
+[node name="CloseMailButton" type="TextureButton" parent="Panel"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -157.0
@@ -76,4 +76,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Panel/TextureRect" to="." method="_on_TextureRect_pressed"]
+[connection signal="pressed" from="Panel/CloseMailButton" to="." method="_on_CloseMailButton_pressed"]

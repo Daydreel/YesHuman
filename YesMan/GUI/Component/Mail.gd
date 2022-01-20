@@ -11,6 +11,9 @@ onready var _object = $Panel/MailBodyContainer/ObjectContainer
 onready var _mail_content = $Panel/MailBodyContainer/MailContentContainer
 onready var _anwser = $Panel/MailBodyContainer/AnswerContainer
 
+func _ready():
+	ResolutionSystem.mail_ui = self
+
 func set_mail_data(from = "from", object = "object", content = "content", yes = "yes", no = "no"):
 	_from_mail = from
 	_object_mail = object
@@ -34,6 +37,6 @@ func hide():
 func show():
 	visible = true
 
-
-func _on_TextureRect_pressed():
+func _on_CloseMailButton_pressed():
 	hide()
+	GS.unset_current_mail()

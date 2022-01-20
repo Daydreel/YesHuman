@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Themes/debug_theme.tres" type="Theme" id=1]
+[ext_resource path="res://GUI/Component/Debug.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.972549, 0.956863, 0.0666667, 1 )
+
+[node name="Debug" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1671.0
+margin_bottom = -900.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 136.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 250, 180 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 176.0
+margin_bottom = 177.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 156.0
+margin_bottom = 157.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoodLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 136.0
+margin_bottom = 43.0
+theme = ExtResource( 1 )
+text = "Mood"
+
+[node name="FameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 136.0
+margin_bottom = 90.0
+theme = ExtResource( 1 )
+text = "Fame"
+
+[node name="WorkloadLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 94.0
+margin_right = 136.0
+margin_bottom = 137.0
+theme = ExtResource( 1 )
+text = "Workload"
+__meta__ = {
+"_edit_use_anchors_": false
+}

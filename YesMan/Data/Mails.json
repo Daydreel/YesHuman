@@ -9,7 +9,8 @@
     "Yes": "Okay",
     "No": "Snif",
     "Conditions": "",
-    "Resolution": ""
+    "Resolution": "",
+    "State": 0
   },
   {
     "ID": 1,
@@ -21,7 +22,8 @@
     "Yes": "Carrément !",
     "No": "Euh...t'es qui ?",
     "Conditions": "",
-    "Resolution": "Job1"
+    "Resolution": "Job1",
+    "State": 0
   },
   {
     "ID": 2,
@@ -33,7 +35,8 @@
     "Yes": "Carrément !",
     "No": "Non, merci.",
     "Conditions": "FirstJobDone",
-    "Resolution": "Job2"
+    "Resolution": "Job2",
+    "State": 0
   },
   {
     "ID": 3,
@@ -45,7 +48,8 @@
     "Yes": "Carrément !",
     "No": "Non, merci.",
     "Conditions": "SecondJobDone",
-    "Resolution": "Job3"
+    "Resolution": "Job3",
+    "State": 0
   },
   {
     "ID": 4,
@@ -57,7 +61,8 @@
     "Yes": "Carrément !",
     "No": "Non, merci.",
     "Conditions": "ThirdJobDone",
-    "Resolution": ""
+    "Resolution": "",
+    "State": 0
   },
   {
     "ID": 5,
@@ -69,6 +74,20 @@
     "Yes": "Tout va bien !",
     "No": "O'scour moman !",
     "Conditions": "ThirdJobDone,SecondJobDone,FirstJobDone",
-    "Resolution": "Familly1"
+    "Resolution": "Familly1",
+    "State": 0
+  },
+  {
+    "ID": 6,
+    "From": "Le bailleur",
+    "Object": "C'est l'or de me payer !",
+    "DateReceived": "13/01/22",
+    "Content": "Voilà le deal, tu me doit 100 Flouze car ça fait un mois déjà que tu habites dans une chambre de mon palace !",
+    "Logo": "",
+    "Yes": "J'ai l'argent !",
+    "No": "Je garde mes tunes",
+    "Conditions": "",
+    "Resolution": "Rent",
+    "State": 0
   }
 ]

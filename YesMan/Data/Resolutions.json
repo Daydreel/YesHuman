@@ -1,19 +1,19 @@
 [
   {
     "ID": "Job1",
-    "Yes": "FirstJobDone",
+    "Yes": "Flag=FirstJobDone,Money=100,Mental=-5,Workload=1",
     "No": "",
     "Ghosting": ""
   },
   {
     "ID": "Job2",
-    "Yes": "SecondJobDone",
+    "Yes": "Flag=SecondJobDone,Money=100,Mental=-20,Mood=-5",
     "No": "",
     "Ghosting": ""
   },
   {
     "ID": "Job3",
-    "Yes": "ThirdJobDone",
+    "Yes": "Flag=ThirdJobDone,Money=100,Mental=-200,Fame=1000",
     "No": "",
     "Ghosting": ""
   },
@@ -25,8 +25,14 @@
   },
   {
     "ID": "Familly1",
-    "Yes": "",
+    "Yes": "Money=-100,Mental=30",
     "No": "",
     "Ghosting": ""
+  },
+  {
+    "ID": "Rent",
+    "Yes": "Money=-100",
+    "No": "Money=-100",
+    "Ghosting": "Money=-100"
   }
 ]

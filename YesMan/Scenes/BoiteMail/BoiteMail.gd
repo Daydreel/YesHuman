@@ -3,21 +3,22 @@ extends Control
 export(String, FILE, "*.json") var mails_data_path
 var _mail_lign_path = preload("res://GUI/Component/MailLign.tscn")
 onready var _mail_list = $MailList
-onready var _mail = $Mail
+onready var _mail_display = $Mail
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var mails = _load_data_mails_raw()
-	for mail in mails:
-		instance_mail_lign(mail["ID"],mail["From"],mail["Object"], mail["DateReceived"])
+	DataSystem.connect("mails_received",self,"_on_mails_received")
+	DataSystem.get_new_mails()
 
-func _load_data_mails_raw():
-	var file = File.new()
-	file.open(mails_data_path, File.READ)
-	var json = JSON.parse(file.get_as_text())
-	file.close()
-	var content = json.result
-	return content
+func display_inbox_mails():
+	#Empty list
+	for mail_lign in _mail_list.get_children():
+		mail_lign.queue_free()
+	#Fill list with current mails
+	for mail in DataSystem.mails:
+		if mail["State"] == DataSystem.STATE_MAIL.INBOX :
+			instance_mail_lign(mail["ID"],mail["From"],mail["Object"], mail["DateReceived"])
+
 
 func load_data_single_mail_raw(var id = -1):
 	if id < 0:
@@ -41,16 +42,21 @@ func instance_mail_lign(var id = -1, var from = "", var object = "", var date_re
 	mail_lign.from = from
 	mail_lign.object = object
 	mail_lign.date_received = date_received
-	mail_lign._mail_box = self
+	mail_lign.connect("pressed", self, "display_current_mail", [id])
 	_mail_list.add_child(mail_lign)
 
-func instance_mail(var id = -1):
-	if id < 0:
-		printerr("No ID for mail in func : instance_mail")
+func display_current_mail(var id):
+	GS.set_current_mail(id)
+	if GS.current_mail == null:
+		printerr("No current_mail in func : display_current_mail")
 		return
-	var mail_data = load_data_single_mail_raw(id)
+	var current_mail = GS.current_mail
 	#set_mail_data : 
 	#from = "from", object = "object", 
 	#content = "content", yes = "yes", no = "no"
-	_mail.set_mail_data(mail_data["From"],mail_data["Object"], mail_data["Content"], mail_data["Yes"], mail_data["No"])
-	_mail.show()
+	_mail_display.set_mail_data(current_mail["From"],current_mail["Object"], current_mail["Content"], current_mail["Yes"], current_mail["No"])
+	_mail_display.show()
+
+
+func _on_mails_received():
+	display_inbox_mails()

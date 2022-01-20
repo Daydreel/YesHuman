@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://GUI/Component/Mail.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/Component/QuitButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/BoiteMail/BoiteMail.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Graphics/Background_Mailbox.png" type="Texture" id=4]
 [ext_resource path="res://GUI/Component/Popup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/Component/MoneyCounter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GUI/Component/MentalCounter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GUI/Component/Debug.tscn" type="PackedScene" id=8]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_cancel"
@@ -65,3 +68,27 @@ margin_bottom = 1042.0
 
 [node name="Popup" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
+
+[node name="Counters" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -729.0
+margin_top = 141.0
+margin_right = -11.0
+margin_bottom = 213.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyCounter" parent="Counters" instance=ExtResource( 6 )]
+
+[node name="MentalCounter" parent="Counters" instance=ExtResource( 7 )]
+margin_left = 353.0
+margin_right = 718.0
+margin_bottom = 72.0
+
+[node name="Debug" parent="." instance=ExtResource( 8 )]
+margin_left = 21.0
+margin_top = 873.0
+margin_right = -1650.0
+margin_bottom = -27.0

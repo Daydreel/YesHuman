@@ -1,35 +1,129 @@
 extends Node
 
+#Object access
+var current_mail
+
+
 #Visible variables
-export var argent = 100
-export var energy = 80
+export var money = 800 setget set_money, get_money
+export var mental_health = 80 setget set_mental_health, get_mental_health
 
 #Invisible variables
-var humeur = 100
-var exposition = 100
-var charge_mentale = 100
+var mood = 100 setget set_mood, get_mood #Humeur
+var fame = 0 setget set_fame, get_fame #Exposition
+var workload = 0 setget set_workload, get_workload #Charge_mental
 
 #Signals
-signal scene_changed
+#Visible stats
+signal money_changed
+signal mental_changed
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+#Invisible stats
+signal mood_changed
+signal fame_changed
+signal workload_changed
+
+
+func set_current_mail(var id):
+	current_mail = DataSystem.mails[id]
+
+func unset_current_mail():
+	current_mail = null
+
+#Visible Stats
+#Money
+func set_money(value):
+	money = value 
+	emit_signal("money_changed", value)
 	
-#Change scene with transition animation
-#scene_name : the scene where to go
-#animation_player : the animation to play for transition
-#delay : the delay to wait before launch the transition
-func _change_scene(scene_name, animation_player, delay = 0.1):
-	yield(get_tree().create_timer(delay), "timeout")
-	animation_player.play("TransitionOut")
-	yield(animation_player, "animation_finished")
-	get_tree().change_scene(scene_name)
-	animation_player.play_backwards("TransitionOut")
-	yield(animation_player, "animation_finished")
-	emit_signal("scene_changed")
+	#Defeat condition
+	if money <= 0:
+		_lose_broke()
+
+func get_money():
+	return money
+
+func calculate_money(value : int):
+	var new_money = value + get_money()
+	set_money(new_money)
 
 
-#func _input(event):
-#	if event is InputEventMouseButton:
-#		print("Mouse Click/Unclick at: ", event)
+#Mental
+func set_mental_health(value):
+	mental_health = value
+	emit_signal("mental_changed", value)
+	
+	#Defeat condition
+	if mental_health <= -100:
+		_lose_burn_out()
+
+func get_mental_health():
+	return mental_health
+
+func calculate_mental(value : int):
+	var new_mental = value + get_mental_health()
+	set_mental_health(new_mental)
+
+#Invisible stats
+#Mood
+func set_mood(value):
+	mood = value
+	emit_signal("mood_changed", value)
+
+func get_mood():
+	return mood
+
+func calculate_mood(value : int):
+	var new_value = value + get_mood()
+	set_mood(new_value)
+
+#Fame
+func set_fame(value):
+	fame = value
+	emit_signal("fame_changed", value)
+
+func get_fame():
+	return fame
+
+func calculate_fame(value : int):
+	var new_value = value + get_fame()
+	set_fame(new_value)
+
+#Workload
+func set_workload(value):
+	workload = value
+	emit_signal("workload_changed", value)
+
+func get_workload():
+	return workload
+
+func calculate_workload(value : int):
+	var new_value = value + get_workload()
+	set_workload(new_value)
+
+#Win/Lose conditions
+#Bad mental health
+func _lose_burn_out():
+	print("burn_out")
+	pass
+
+#No more money for rent
+func _lose_broke():
+	print("broke")
+	pass
+
+#Tons of money !
+func _win_rich():
+	pass
+
+#Good social life
+func _win_social_life():
+	pass
+
+#Famous as f*ck
+func _win_famous():
+	pass
+
+#Yeah, you got it all !
+func _win_equilibrium():
+	pass

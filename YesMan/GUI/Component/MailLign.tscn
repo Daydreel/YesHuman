@@ -85,5 +85,3 @@ margin_right = 1900.0
 margin_bottom = 75.0
 mouse_filter = 1
 text = "Date"
-
-[connection signal="pressed" from="." to="." method="_on_MailLign_pressed"]

@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 
 DataSystem="*res://Systems/DataSystem.gd"
 GS="*res://Systems/GameSystem.gd"
+ResolutionSystem="*res://Systems/ResolutionSystem.gd"
 
 [display]
 
