@@ -30,6 +30,10 @@ window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/YesHumanTool/plugin.cfg" )
+
 [physics]
 
 common/enable_pause_aware_picking=true

@@ -1,0 +1,221 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/YesHumanTool/MailsList.gd" type="Script" id=1]
+[ext_resource path="res://addons/YesHumanTool/DataManager.gd" type="Script" id=2]
+[ext_resource path="res://addons/YesHumanTool/ContentDisplayer.gd" type="Script" id=3]
+
+[node name="MainPanel" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DataManager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="HBox" type="HBoxContainer" parent="."]
+margin_left = 483.0
+margin_top = 232.0
+margin_right = 1437.0
+margin_bottom = 848.0
+
+[node name="MailsList" type="ItemList" parent="HBox"]
+margin_right = 300.0
+margin_bottom = 616.0
+rect_min_size = Vector2( 300, 600 )
+items = [ "L'ArtSuf vous accompagne", null, false, "Vous du talent ?", null, false, "Vous du talent ? #2", null, false, "Vous du talent ? #3", null, false, "Vous du talent ? #4", null, false, "Oui, je t'écris !", null, false, "C'est l'or de me payer !", null, false ]
+script = ExtResource( 1 )
+
+[node name="Margin" type="MarginContainer" parent="HBox"]
+margin_left = 304.0
+margin_right = 954.0
+margin_bottom = 616.0
+custom_constants/margin_left = 50
+
+[node name="Panel" type="Panel" parent="HBox/Margin"]
+margin_left = 50.0
+margin_right = 650.0
+margin_bottom = 616.0
+rect_min_size = Vector2( 600, 600 )
+
+[node name="Margin" type="MarginContainer" parent="HBox/Margin"]
+margin_left = 50.0
+margin_right = 650.0
+margin_bottom = 616.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ContentDisplayer" type="VBoxContainer" parent="HBox/Margin/Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 590.0
+margin_bottom = 606.0
+custom_constants/separation = 10
+script = ExtResource( 3 )
+
+[node name="LabelMailID" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_right = 580.0
+margin_bottom = 14.0
+text = "ID Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailID" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 24.0
+margin_right = 580.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 0, 25 )
+text = "ID Label"
+wrap_enabled = true
+
+[node name="LabelMailFrom" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 59.0
+margin_right = 580.0
+margin_bottom = 73.0
+text = "Mail Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailFrom" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 83.0
+margin_right = 580.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 25 )
+text = "Mail Label"
+wrap_enabled = true
+
+[node name="LabelMailContent" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 118.0
+margin_right = 580.0
+margin_bottom = 132.0
+text = "Content Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailContent" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 142.0
+margin_right = 580.0
+margin_bottom = 242.0
+rect_min_size = Vector2( 0, 100 )
+text = "Content Label"
+wrap_enabled = true
+
+[node name="LabelMailDateReceived" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 252.0
+margin_right = 580.0
+margin_bottom = 266.0
+text = "Date Received Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailDateReceived" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 276.0
+margin_right = 580.0
+margin_bottom = 301.0
+rect_min_size = Vector2( 0, 25 )
+text = "Date Received Label"
+wrap_enabled = true
+
+[node name="LabelMailNo" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 311.0
+margin_right = 580.0
+margin_bottom = 325.0
+text = "No Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailNo" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 335.0
+margin_right = 580.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 0, 25 )
+text = "No Label"
+wrap_enabled = true
+
+[node name="LabelMailYes" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 370.0
+margin_right = 580.0
+margin_bottom = 384.0
+text = "Yes Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailYes" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 394.0
+margin_right = 580.0
+margin_bottom = 419.0
+rect_min_size = Vector2( 0, 25 )
+text = "Yes Label"
+wrap_enabled = true
+
+[node name="LabelMailConditions" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 429.0
+margin_right = 580.0
+margin_bottom = 443.0
+text = "Conditions Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailConditions" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 453.0
+margin_right = 580.0
+margin_bottom = 478.0
+rect_min_size = Vector2( 0, 25 )
+text = "Conditions Label"
+wrap_enabled = true
+
+[node name="LabelMailState" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 488.0
+margin_right = 580.0
+margin_bottom = 502.0
+text = "State Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailState" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 512.0
+margin_right = 580.0
+margin_bottom = 537.0
+rect_min_size = Vector2( 0, 25 )
+text = "State Label"
+wrap_enabled = true
+
+[node name="LabelMailResolution" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 547.0
+margin_right = 580.0
+margin_bottom = 561.0
+text = "Resolution Label"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailResolution" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+margin_top = 571.0
+margin_right = 580.0
+margin_bottom = 596.0
+rect_min_size = Vector2( 0, 25 )
+text = "Resolution Label"
+wrap_enabled = true
+
+[connection signal="item_selected" from="HBox/MailsList" to="HBox/MailsList" method="_on_MailsList_item_selected"]
