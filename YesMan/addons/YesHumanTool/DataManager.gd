@@ -7,10 +7,6 @@ const _flags_data_path = _data_path + "Flags.json"
 const _resolutions_data_path = _data_path + "Resolutions.json"
 
 
-func create_data():
-	pass
-
-
 func _read_data(var path : String):
 	var file = File.new()
 	file.open(path, File.READ)
@@ -20,8 +16,12 @@ func _read_data(var path : String):
 	return content
 
 
-func _update_data():
-	pass
+func _update_data(var path : String, var data : Array):
+	var file = File.new()
+	file.open(path, File.WRITE)
+	var json = JSON.print(data)
+	file.store_string(json)
+	file.close()
 
 
 func _delete_data():

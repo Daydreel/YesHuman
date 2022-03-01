@@ -17,205 +17,292 @@ script = ExtResource( 2 )
 
 [node name="HBox" type="HBoxContainer" parent="."]
 margin_left = 483.0
-margin_top = 232.0
+margin_top = 228.0
 margin_right = 1437.0
-margin_bottom = 848.0
+margin_bottom = 852.0
 
-[node name="MailsList" type="ItemList" parent="HBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBox"]
 margin_right = 300.0
-margin_bottom = 616.0
+margin_bottom = 624.0
+
+[node name="MailsList" type="ItemList" parent="HBox/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 600.0
 rect_min_size = Vector2( 300, 600 )
-items = [ "L'ArtSuf vous accompagne", null, false, "Vous du talent ?", null, false, "Vous du talent ? #2", null, false, "Vous du talent ? #3", null, false, "Vous du talent ? #4", null, false, "Oui, je t'écris !", null, false, "C'est l'or de me payer !", null, false ]
 script = ExtResource( 1 )
 
-[node name="Margin" type="MarginContainer" parent="HBox"]
+[node name="HBoxButtons" type="HBoxContainer" parent="HBox/VBoxContainer"]
+margin_top = 604.0
+margin_right = 300.0
+margin_bottom = 624.0
+
+[node name="NewButton" type="Button" parent="HBox/VBoxContainer/HBoxButtons"]
+margin_right = 148.0
+margin_bottom = 20.0
+hint_tooltip = "Add a new mail in the mail list.
+Don't forget to update !"
+size_flags_horizontal = 3
+text = "New Mail"
+
+[node name="DeleteButton" type="Button" parent="HBox/VBoxContainer/HBoxButtons"]
+margin_left = 152.0
+margin_right = 300.0
+margin_bottom = 20.0
+hint_tooltip = "Delete the selected mail from the database !"
+size_flags_horizontal = 3
+text = "Delete"
+
+[node name="MailForm" type="MarginContainer" parent="HBox"]
 margin_left = 304.0
 margin_right = 954.0
-margin_bottom = 616.0
+margin_bottom = 624.0
 custom_constants/margin_left = 50
 
-[node name="Panel" type="Panel" parent="HBox/Margin"]
+[node name="Panel" type="Panel" parent="HBox/MailForm"]
 margin_left = 50.0
 margin_right = 650.0
-margin_bottom = 616.0
+margin_bottom = 624.0
 rect_min_size = Vector2( 600, 600 )
 
-[node name="Margin" type="MarginContainer" parent="HBox/Margin"]
+[node name="Margin" type="MarginContainer" parent="HBox/MailForm"]
 margin_left = 50.0
 margin_right = 650.0
-margin_bottom = 616.0
+margin_bottom = 624.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
 
-[node name="ContentDisplayer" type="VBoxContainer" parent="HBox/Margin/Margin"]
+[node name="ContentDisplayer" type="VBoxContainer" parent="HBox/MailForm/Margin"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 590.0
-margin_bottom = 606.0
+margin_bottom = 614.0
 custom_constants/separation = 10
 script = ExtResource( 3 )
 
-[node name="LabelMailID" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+[node name="LabelMailObject" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer"]
 margin_right = 580.0
 margin_bottom = 14.0
-text = "ID Label"
-autowrap = true
+size_flags_vertical = 1
+text = "Object :"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputMailID" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
+[node name="InputMailObject" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer"]
 margin_top = 24.0
 margin_right = 580.0
 margin_bottom = 49.0
 rect_min_size = Vector2( 0, 25 )
-text = "ID Label"
+size_flags_horizontal = 3
+text = "Object Input"
 wrap_enabled = true
 
-[node name="LabelMailFrom" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
+[node name="HBox" type="HBoxContainer" parent="HBox/MailForm/Margin/ContentDisplayer"]
 margin_top = 59.0
 margin_right = 580.0
-margin_bottom = 73.0
-text = "Mail Label"
-autowrap = true
+margin_bottom = 84.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="LabelMailID" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBox"]
+margin_right = 23.0
+margin_bottom = 25.0
+size_flags_vertical = 1
+text = "ID :"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputMailFrom" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 83.0
-margin_right = 580.0
-margin_bottom = 108.0
+[node name="InputMailID" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBox"]
+margin_left = 27.0
+margin_right = 77.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 25 )
+size_flags_horizontal = 0
+text = "ID"
+readonly = true
+
+[node name="LabelMailFrom" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBox"]
+margin_left = 81.0
+margin_right = 122.0
+margin_bottom = 25.0
+size_flags_vertical = 1
+text = "From :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailFrom" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBox"]
+margin_left = 126.0
+margin_right = 330.0
+margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
-text = "Mail Label"
+size_flags_horizontal = 3
+text = "From Label"
 wrap_enabled = true
 
-[node name="LabelMailContent" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 118.0
+[node name="LabelMailDateReceived" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBox"]
+margin_left = 334.0
+margin_right = 372.0
+margin_bottom = 25.0
+size_flags_vertical = 1
+text = "Date :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailDateReceived" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBox"]
+margin_left = 376.0
 margin_right = 580.0
-margin_bottom = 132.0
-text = "Content Label"
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+text = "Date Received Label"
+wrap_enabled = true
+
+[node name="LabelMailContent" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer"]
+margin_top = 94.0
+margin_right = 580.0
+margin_bottom = 108.0
+text = "Content"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputMailContent" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 142.0
+[node name="InputMailContent" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer"]
+margin_top = 118.0
 margin_right = 580.0
-margin_bottom = 242.0
+margin_bottom = 218.0
 rect_min_size = Vector2( 0, 100 )
 text = "Content Label"
 wrap_enabled = true
 
-[node name="LabelMailDateReceived" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 252.0
+[node name="HBox2" type="HBoxContainer" parent="HBox/MailForm/Margin/ContentDisplayer"]
+margin_top = 228.0
 margin_right = 580.0
-margin_bottom = 266.0
-text = "Date Received Label"
-autowrap = true
+margin_bottom = 288.0
+
+[node name="LabelMailNo" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBox2"]
+margin_right = 26.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+text = "No :"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputMailDateReceived" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 276.0
-margin_right = 580.0
-margin_bottom = 301.0
-rect_min_size = Vector2( 0, 25 )
-text = "Date Received Label"
-wrap_enabled = true
-
-[node name="LabelMailNo" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 311.0
-margin_right = 580.0
-margin_bottom = 325.0
-text = "No Label"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InputMailNo" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 335.0
-margin_right = 580.0
-margin_bottom = 360.0
-rect_min_size = Vector2( 0, 25 )
+[node name="InputMailNo" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBox2"]
+margin_left = 30.0
+margin_right = 286.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
 text = "No Label"
 wrap_enabled = true
 
-[node name="LabelMailYes" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 370.0
+[node name="LabelMailYes" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBox2"]
+margin_left = 290.0
+margin_right = 320.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+text = "Yes :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailYes" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBox2"]
+margin_left = 324.0
 margin_right = 580.0
-margin_bottom = 384.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
 text = "Yes Label"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InputMailYes" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 394.0
-margin_right = 580.0
-margin_bottom = 419.0
-rect_min_size = Vector2( 0, 25 )
-text = "Yes Label"
 wrap_enabled = true
 
-[node name="LabelMailConditions" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 429.0
+[node name="HBox3" type="HBoxContainer" parent="HBox/MailForm/Margin/ContentDisplayer"]
+margin_top = 298.0
 margin_right = 580.0
-margin_bottom = 443.0
-text = "Conditions Label"
-autowrap = true
+margin_bottom = 358.0
+
+[node name="LabelMailConditions" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBox3"]
+margin_right = 76.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+text = "Conditions :"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputMailConditions" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 453.0
-margin_right = 580.0
-margin_bottom = 478.0
-rect_min_size = Vector2( 0, 25 )
+[node name="InputMailConditions" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBox3"]
+margin_left = 80.0
+margin_right = 288.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
 text = "Conditions Label"
 wrap_enabled = true
 
-[node name="LabelMailState" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 488.0
-margin_right = 580.0
-margin_bottom = 502.0
-text = "State Label"
-autowrap = true
+[node name="LabelMailResolution" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBox3"]
+margin_left = 292.0
+margin_right = 368.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+text = "Resolution :"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputMailState" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 512.0
+[node name="InputMailResolution" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBox3"]
+margin_left = 372.0
 margin_right = 580.0
-margin_bottom = 537.0
-rect_min_size = Vector2( 0, 25 )
-text = "State Label"
-wrap_enabled = true
-
-[node name="LabelMailResolution" type="Label" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 547.0
-margin_right = 580.0
-margin_bottom = 561.0
-text = "Resolution Label"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InputMailResolution" type="TextEdit" parent="HBox/Margin/Margin/ContentDisplayer"]
-margin_top = 571.0
-margin_right = 580.0
-margin_bottom = 596.0
-rect_min_size = Vector2( 0, 25 )
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
 text = "Resolution Label"
 wrap_enabled = true
 
-[connection signal="item_selected" from="HBox/MailsList" to="HBox/MailsList" method="_on_MailsList_item_selected"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/MailForm/Margin/ContentDisplayer"]
+margin_top = 368.0
+margin_right = 580.0
+margin_bottom = 399.0
+
+[node name="LabelMailState" type="Label" parent="HBox/MailForm/Margin/ContentDisplayer/HBoxContainer"]
+margin_right = 240.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+text = "Initial State of mail
+Default is 0"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMailState" type="TextEdit" parent="HBox/MailForm/Margin/ContentDisplayer/HBoxContainer"]
+margin_left = 244.0
+margin_right = 485.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+text = "State Label"
+wrap_enabled = true
+
+[node name="ButtonUpdateData" type="Button" parent="HBox/MailForm/Margin/ContentDisplayer/HBoxContainer"]
+margin_left = 489.0
+margin_right = 580.0
+margin_bottom = 31.0
+text = "Update Data"
+
+[connection signal="item_selected" from="HBox/VBoxContainer/MailsList" to="HBox/VBoxContainer/MailsList" method="_on_MailsList_item_selected"]
+[connection signal="pressed" from="HBox/MailForm/Margin/ContentDisplayer/HBoxContainer/ButtonUpdateData" to="HBox/MailForm/Margin/ContentDisplayer" method="_on_ButtonUpdateData_pressed"]
