@@ -29,6 +29,7 @@ margin_bottom = 624.0
 margin_right = 300.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 300, 600 )
+items = [ "L'ArtSuf vous accompagne", null, false, "Vous du talent ?", null, false, "Vous du talent ? #2", null, false, "Vous du talent ? #3", null, false, "Vous du talent ? #4", null, false, "Oui, je t'écris !", null, false, "C'est l'or de me payer !", null, false, "TEST", null, false ]
 script = ExtResource( 1 )
 
 [node name="HBoxButtons" type="HBoxContainer" parent="HBox/VBoxContainer"]
@@ -305,4 +306,6 @@ margin_bottom = 31.0
 text = "Update Data"
 
 [connection signal="item_selected" from="HBox/VBoxContainer/MailsList" to="HBox/VBoxContainer/MailsList" method="_on_MailsList_item_selected"]
+[connection signal="pressed" from="HBox/VBoxContainer/HBoxButtons/NewButton" to="HBox/VBoxContainer/MailsList" method="_on_NewButton_pressed"]
+[connection signal="pressed" from="HBox/VBoxContainer/HBoxButtons/DeleteButton" to="HBox/VBoxContainer/MailsList" method="_on_DeleteButton_pressed"]
 [connection signal="pressed" from="HBox/MailForm/Margin/ContentDisplayer/HBoxContainer/ButtonUpdateData" to="HBox/MailForm/Margin/ContentDisplayer" method="_on_ButtonUpdateData_pressed"]

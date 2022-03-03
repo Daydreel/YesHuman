@@ -24,5 +24,6 @@ func _update_data(var path : String, var data : Array):
 	file.close()
 
 
+
 func _delete_data():
 	pass
