@@ -32,6 +32,7 @@ func _enter_tree():
 		var err = connect("mail_data_updated", MailsList,"_on_MailsList_mail_data_updated")
 	
 	_set_displayers()
+	MailsList.emit_signal("item_selected", 0)
 
 func _on_ContentDisplayer_display_mail(mail_data):
 	InputMailObject.text = str(mail_data["Object"])
@@ -111,3 +112,9 @@ func _on_ButtonUpdateData_pressed():
 			emit_signal("mail_data_updated")
 			return
 		i += 1
+
+func hide():
+	visible = false
+
+func show():
+	visible = true
