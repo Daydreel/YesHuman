@@ -16,7 +16,7 @@ func display_inbox_mails():
 		mail_lign.queue_free()
 	#Fill list with current mails
 	for mail in DataSystem.mails:
-		if mail["State"] == DataSystem.STATE_MAIL.INBOX :
+		if int(mail["State"]) == DataSystem.STATE_MAIL.INBOX :
 			instance_mail_lign(mail["ID"],mail["From"],mail["Object"], mail["DateReceived"])
 
 
@@ -46,7 +46,7 @@ func instance_mail_lign(var id = -1, var from = "", var object = "", var date_re
 	_mail_list.add_child(mail_lign)
 
 func display_current_mail(var id):
-	GS.set_current_mail(id)
+	GS.set_current_mail(int(id))
 	if GS.current_mail == null:
 		printerr("No current_mail in func : display_current_mail")
 		return

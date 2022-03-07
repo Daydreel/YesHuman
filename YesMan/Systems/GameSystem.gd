@@ -24,8 +24,13 @@ signal fame_changed
 signal workload_changed
 
 
-func set_current_mail(var id):
-	current_mail = DataSystem.mails[id]
+func set_current_mail(var id : int):
+	var mails = DataSystem.mails
+	for mail in mails:
+		if int(mail["ID"]) == id:
+			current_mail = mail
+			return
+	printerr("GameSystem.set_current_mail(id : int) return no mails")
 
 func unset_current_mail():
 	current_mail = null

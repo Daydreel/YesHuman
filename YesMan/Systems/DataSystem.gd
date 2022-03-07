@@ -7,7 +7,7 @@ var _resolutions_data_path = _data_path + "Resolutions.json"
 
 enum STATE_MAIL {NEW, INBOX, REPLIED}
 
-var mails
+var mails = []
 var current_mails = []
 var flags = {}
 var conditions = {}
@@ -26,7 +26,7 @@ func _ready():
 
 func get_new_mails():
 	for mail in mails:
-		if mail["State"] == STATE_MAIL.NEW:
+		if int(mail["State"]) == STATE_MAIL.NEW:
 			var mail_conditions = mail["Conditions"].rsplit(",")
 			var final_condition = "TRUE"
 			
